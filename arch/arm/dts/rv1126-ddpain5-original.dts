@@ -498,7 +498,7 @@
 
 	chosen {
 		stdout-path = "/serial@ff570000";
-		u-boot,spl-boot-order = "&sdmmc0, /dwmmc@ffc50000";
+		u-boot,spl-boot-order = "/dwmmc@ffc50000";
 	};
 
 	secure_otp@0xff5d0000 {
