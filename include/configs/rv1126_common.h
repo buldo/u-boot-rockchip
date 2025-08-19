@@ -77,6 +77,9 @@
 	"kernel_addr1_c=0x02008000\0"	\
 	"ramdisk_addr1_r=0x03200000\0"
 
+#ifdef CONFIG_ENV_MEM_LAYOUT
+#define ENV_MEM_LAYOUT_SETTINGS		CONFIG_ENV_MEM_LAYOUT_SETTINGS
+#else
 /* memory size > 128MB */
 #define ENV_MEM_LAYOUT_SETTINGS		\
 	"scriptaddr=0x00000000\0"	\
@@ -85,6 +88,8 @@
 	"kernel_addr_r=0x00008000\0"	\
 	"kernel_addr_c=0x02008000\0"	\
 	"ramdisk_addr_r=0x0a200000\0"
+
+#endif
 
 #include <config_distro_bootcmd.h>
 #define CONFIG_EXTRA_ENV_SETTINGS	\
